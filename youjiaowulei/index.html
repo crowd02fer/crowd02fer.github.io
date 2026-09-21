@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="有教无类 - 深度解析儒家教育思想核心概念。本页提供有教无类的详细解释、历史背景、现代教育意义及实践案例，帮助理解孔子教育平等理念与当代教育公平的关联。">
+    <meta name="keywords" content="有教无类, 儒家思想, 教育理念, 孔子, 教育公平, 教育哲学, 中国传统文化">
+    <title>有教无类 - 儒家教育哲学核心概念与当代意义</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B4513; /* SaddleBrown - 书卷气与稳重 */
+            --secondary-color: #F5DEB3; /* Wheat - 暖色调背景 */
+            --accent-color: #D2691E; /* Chocolate - 强调色 */
+            --text-dark: #2C1810;
+            --text-light: #5D4037;
+            --bg-body: #FAF3E0;
+            --bg-white: #FFFFFF;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(44, 24, 16, 0.1);
+            --container-width: 1000px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "SimSun", serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部样式 */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            border: 2px solid var(--primary-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            background-color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #fff8e1 100%);
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(139, 69, 19, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* 主要内容区 */
+        main {
+            padding: 40px 0;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            color: var(--primary-color);
+            border-left: 6px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 历史背景卡片 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .info-card {
+            background: var(--bg-white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .info-card p {
+            font-size: 15px;
+            color: var(--text-light);
+            text-align: justify;
+        }
+
+        /* 经典原文展示 */
+        .quote-box {
+            background-color: #fff;
+            border: 1px solid var(--secondary-color);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            position: relative;
+        }
+
+        .quote-box::before {
+            content: "《论语·卫灵公》";
+            display: block;
+            margin-bottom: 20px;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .quote-text {
+            font-size: 24px;
+            font-family: "KaiTi", "STKaiti", serif; /* 楷体 */
+            color: var(--primary-color);
+            font-weight: bold;
+            line-height: 1.6;
+        }
+
+        .quote-explanation {
+            margin-top: 20px;
+            font-size: 16px;
+            color: var(--text-dark);
+        }
+
+        /* 现代意义 */
+        .meaning-list {
+            list-style: none;
+        }
+
+        .meaning-list li {
+            background: var(--bg-white);
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .meaning-list li strong {
+            color: var(--accent-color);
+            margin-right: 15px;
+            min-width: 120px;
+            font-size: 18px;
+        }
+
+        /* 互动问答 (FAQ) */
+        .faq-item {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: background-color 0.2s;
+        }
+
+        .faq-question:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: var(--text-light);
+            background-color: #fafafa;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 200px; /* 近似高度 */
+            border-top: 1px solid #eee;
+        }
+
+        .faq-icon {
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--text-dark);
+            color: #ccc;
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .meaning-list li {
+                flex-direction: column;
+            }
+
+            .meaning-list li strong {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo"><span>典籍</span>有教无类</a>
+            <nav>
+                <ul>
+                    <li><a href="#origin" class="active">历史渊源</a></li>
+                    <li><a href="#meaning">核心含义</a></li>
+                    <li><a href="#modern">现代价值</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>有教无类</h1>
+            <p>孔子教育思想的核心基石，主张教育应当面向所有人，不分贵贱、种族与贫富，实现教育机会的均等。</p>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- 历史背景 -->
+        <section id="origin">
+            <h2 class="section-title">历史渊源与出处</h2>
+            <div class="card-grid">
+                <article class="info-card">
+                    <h3>出处</h3>
+                    <p>“有教无类”语出《论语·卫灵公》。这是孔子在教育实践和教学思想中提出的著名论断，标志着中国古代教育从“学在官府”向“学在四夷”的重大转变。</p>
+                </article>
+                <article class="info-card">
+                    <h3>背景</h3>
+                    <p>在春秋战国时期，教育长期被贵族垄断。孔子打破这一传统，广收门徒，无论是贵族子弟还是平民百姓，甚至商贾之人，只要愿意学习，他都予以接纳。这种打破阶层壁垒的教育实践，在当时具有极其巨大的革命性意义。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 经典原文 -->
+        <section id="text">
+            <h2 class="section-title">经典原文</h2>
+            <div class="quote-box">
+                <div class="quote-text">子曰：“有教无类。”</div>
+                <div class="quote-explanation">
+                    <p><strong>白话译文：</strong>孔子说：“教育不分类别，人人都有受教育的权利。”</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心含义 -->
+        <section id="meaning">
+            <h2 class="section-title">核心含义深度解析</h2>
+            <ul class="meaning-list">
+                <li>
+                    <strong>教育对象的普遍性：</strong>
+                    强调受教育者不应受到出身、地位、财富或种族的限制。无论贫富贵贱，只要有学习的愿望和资质，都应当成为教育的对象。
+                </li>
+                <li>
+                    <strong>教育起点的公平性：</strong>
+                    主张教育机会的均等，即在教育的大门面前，人人平等。它反对特权阶级对教育资源的垄断，确立了“人人皆可成才”的信念。
+                </li>
+                <li>
+                    <strong>因材施教的前提：</strong>
+                    “有教无类”强调的是“入学的门槛”，而“因材施教”强调的是“教学的过程”。只有面对所有学生，才能进行个性化的教学，发掘每个人的潜能。
+                </li>
+            </ul>
+        </section>
+
+        <!-- 现代意义 -->
+        <section id="modern">
+            <h2 class="section-title">现代教育中的价值</h2>
+            <div class="card-grid">
+                <div class="info-card">
+                    <h3>教育公平</h3>
+                    <p>在当今社会，“有教无类”是推动教育公平、促进社会阶层流动的重要思想武器。它提醒我们关注弱势群体的受教育机会，致力于构建普惠、包容的教育体系。</p>
+                </div>
+                <div class="info-card">
+                    <h3>终身学习</h3>
+                    <p>随着知识经济的到来，教育的概念已延伸至终身。有教无类的精神鼓励人们无论在人生的哪个阶段，无论从事何种职业，都应保持学习的热情和动力。</p>
+                </div>
+                <div class="info-card">
+                    <h3>包容性发展</h3>
+                    <p>在多元文化的背景下，这一思想倡导对差异的尊重与包容。教育不应筛选人，而应通过教育让不同背景的人都能获得自我提升和发展的机会。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+            <h2 class="section-title">常见问题 (FAQ)</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>有教无类和“因材施教”有什么区别？</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>“有教无类”主要解决的是<strong>“教谁”</strong>的问题，即教育对象的广泛性和公平性，主张人人都有受教育的权利；“因材施教”主要解决的是<strong>“怎么教”</strong>的问题，即针对不同的学生采取不同的教学方法，以实现最佳的教育效果。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>“有教无类”在当代如何体现？</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>当代体现为普及义务教育、关注特殊群体教育、推广在线教育资源以及消除教育歧视等。它要求教育政策制定者和执行者确保每个孩子都能坐在同一个教室里，获得平等的学习机会。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>为什么孔子能提出这样的思想？</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>这源于孔子“仁”的思想以及他周游列国、广交友人的经历。他打破了当时“学在官府”的壁垒，通过创办私学，将知识传播给更广泛的社会阶层，从而确立了这一伟大的教育理念。</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 有教无类 - 典籍文化解读平台</p>
+            <p>弘扬中华优秀传统文化，传承儒家教育智慧。</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 折叠交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 如果需要手风琴效果（点开一个关闭其他），取消下面注释
+                    // faqItems.forEach(otherItem => {
+                    //     if (otherItem !== item) otherItem.classList.remove('active');
+                    // });
+
+                    item.classList.toggle('active');
+                });
+            });
+
+            // 导航栏平滑滚动
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // 更新导航激活状态
+                        document.querySelectorAll('nav a').forEach(nav => nav.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
