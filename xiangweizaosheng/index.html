@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="相位噪声综合指南：深入解析相位噪声定义、测量方法、频谱特性及在通信、雷达、振荡器设计中的应用。提供相位噪声分析工具、选型建议及常见问题解答。">
+    <meta name="keywords" content="相位噪声, 频率稳定性, 振荡器, 频谱分析仪, 锁相环, LLO">
+    <title>相位噪声-信号源频率稳定度分析与测量指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --accent-color: #3b82f6;
+            --accent-hover: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --code-bg: #1e293b;
+            --code-text: #e2e8f0;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-hover);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1e293b 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .hero-btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Main Content Grid */
+        main {
+            padding: 3rem 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+            color: var(--primary-color);
+        }
+
+        /* Definition Card */
+        .definition-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .definition-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .definition-card p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .formula-box {
+            background-color: var(--code-bg);
+            color: var(--code-text);
+            padding: 1rem;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+
+        /* Spectrum Chart Placeholder */
+        .chart-placeholder {
+            background-color: #f1f5f9;
+            border-radius: 8px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .chart-placeholder::before {
+            content: "相位噪声频谱示意图 (L(f) vs f)");
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Feature Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .feature-item h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Sidebar */
+        .sidebar-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-card h4 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .sidebar-list {
+            list-style: none;
+        }
+
+        .sidebar-list li {
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sidebar-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .sidebar-list a {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            display: block;
+        }
+
+        .sidebar-list a:hover {
+            color: var(--accent-color);
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.25rem;
+            color: var(--accent-color);
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            padding: 0 1rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            background-color: #f8fafc;
+            color: var(--text-secondary);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1rem;
+            max-height: 500px; /* Arbitrary large height */
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #94a3b8;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h5 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Utility */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background-color: #dbeafe;
+            color: #1e40af;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-color)"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                Signal<span>Noise</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#definition" class="active">定义</a></li>
+                    <li><a href="#spectrum">频谱特性</a></li>
+                    <li><a href="#impact">应用影响</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>相位噪声</h1>
+            <p>深入理解信号源的频率稳定性与频谱纯净度，掌握振荡器设计与测量的核心指标。</p>
+            <a href="#definition" class="hero-btn">开始阅读</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="grid-2">
+            <!-- Left Column -->
+            <div class="content-col">
+                
+                <!-- Definition -->
+                <section id="definition">
+                    <h2 class="section-title">相位噪声是什么？</h2>
+                    <div class="definition-card">
+                        <span class="badge">核心概念</span>
+                        <h3>定义与本质</h3>
+                        <p>相位噪声是衡量信号源（如晶体振荡器、锁相环、信号发生器）频率稳定度和频谱纯度的重要指标。它描述了载波频率附近的频谱分量分布情况，即信号的瞬时相位如何随时间波动。</p>
+                        <p>从物理角度看，相位噪声反映了信号的相位随机起伏。这种起伏会导致信号频谱不再是理想的单一频率线，而是在载波周围产生边带。这些边带能量越强，相位噪声越差。</p>
+                    </div>
+
+                    <div class="definition-card">
+                        <h3>数学表达</h3>
+                        <p>相位噪声通常用单边带相位噪声功率谱密度 <strong>L(f)</strong> 来描述，单位为 dBc/Hz。它表示在偏离载波频率 <em>f</em> 处，单位带宽内的功率与载波功率之比。</p>
+                        <div class="formula-box">
+                            L(f) = 10 log10(P_sideband(f) / P_carrier)
+                        </div>
+                        <p style="font-size: 0.9rem; color: #64748b;">其中，f 为偏离载波的频率偏移量。</p>
+                    </div>
+                </section>
+
+                <!-- Spectrum Characteristics -->
+                <section id="spectrum">
+                    <h2 class="section-title">频谱特性与测量</h2>
+                    <p>理想的正弦波在频谱分析仪上应显示为一条无限窄的直线。然而，实际信号源由于内部噪声和物理限制，这条线会向两侧扩展，形成“噪声底”。</p>
+                    
+                    <div class="chart-placeholder" style="margin-bottom: 1.5rem;">
+                        <!-- Visual representation of spectrum -->
+                        <svg width="80%" height="100%" viewBox="0 0 400 200" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="spectrumGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.2" />
+                                    <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Carrier -->
+                            <line x1="200" y1="20" x2="200" y2="180" stroke="#0f172a" stroke-width="2" />
+                            <!-- Sidebands (Noise floor) -->
+                            <path d="M 200 20 L 50 180 L 350 180 L 200 20 Z" fill="url(#spectrumGrad)" />
+                            <line x1="200" y1="20" x2="50" y2="180" stroke="#3b82f6" stroke-width="1" stroke-dasharray="5,5" />
+                            <line x1="200" y1="20" x2="350" y2="180" stroke="#3b82f6" stroke-width="1" stroke-dasharray="5,5" />
+                            <!-- Labels -->
+                            <text x="200" y="15" text-anchor="middle" font-size="12" fill="#0f172a">Carrier</text>
+                            <text x="30" y="150" font-size="12" fill="#64748b">Offset f</text>
+                            <text x="200" y="195" text-anchor="middle" font-size="12" fill="#64748b">f (Hz)</text>
+                        </svg>
+                    </div>
+
+                    <div class="definition-card">
+                        <h3>频谱特征</h3>
+                        <ul style="padding-left: 1.5rem; color: var(--text-secondary);">
+                            <li><strong>近端相位噪声：</strong> 在载波极近的频率偏移处（如 1Hz - 1kHz），通常受控于锁相环的闭环带宽，表现为平坦或下降。</li>
+                            <li><strong>远端相位噪声：</strong> 在偏离载波较远的地方（如 > 10kHz），通常受限于振荡器自身的品质因数（Q值）和内部热噪声，表现为 1/f 噪声特性。</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Application Impact -->
+                <section id="impact">
+                    <h2 class="section-title">相位噪声的影响</h2>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">📡</div>
+                            <h4>通信系统</h4>
+                            <p>降低信噪比（SNR），导致误码率（BER）上升，影响数据传输速率和通信距离。</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📡</div>
+                            <h4>雷达探测</h4>
+                            <p>增加目标信号的底噪，降低小目标与背景杂波的对比度，缩短雷达探测距离。</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📡</div>
+                            <h4>频率合成</h4>
+                            <p>影响杂散抑制能力。高相位噪声会导致频率合成器输出信号质量下降。</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right Sidebar -->
+            <aside class="sidebar-col">
+                
+                <div class="sidebar-card">
+                    <h4>常见术语</h4>
+                    <ul class="sidebar-list">
+                        <li><a href="#">抖动</a></li>
+                        <li><a href="#">阿伦方差</a></li>
+                        <li><a href="#">杂散</a></li>
+                        <li><a href="#">倍频/分频</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card">
+                    <h4>选型指南</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem;">在选择信号源时，请关注以下指标：</p>
+                    <ul class="sidebar-list">
+                        <li><strong>低相噪:</strong> 适用于精密测量与雷达。</li>
+                        <li><strong>低杂散:</strong> 适用于频谱纯净度要求高的场合。</li>
+                        <li><strong>快速切换:</strong> 适用于跳频通信。</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card">
+                    <h4>相关工具</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">计算相位噪声对系统性能的影响。</p>
+                    <button class="hero-btn" style="width: 100%; margin-top: 1rem;" onclick="alert('这是一个演示页面，实际工具需要后端支持。')">打开计算器</button>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- FAQ Section -->
+    <section class="container" style="padding-bottom: 3rem;">
+        <h2 class="section-title">常见问题 (FAQ)</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">相位噪声和频率抖动有什么关系？</div>
+            <div class="faq-answer">
+                相位噪声是频域的描述，而频率抖动是时域的描述。它们本质上是同一物理现象的不同表达方式。相位噪声越低，通常意味着频率抖动越小，信号越稳定。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">如何降低振荡器的相位噪声？</div>
+            <div class="faq-answer">
+                提高振荡器的品质因数（Q值），例如使用高Q谐振腔或TCXO/OCXO晶体；在锁相环设计中优化环路滤波器参数，提高环路带宽；以及采用低噪声的参考源。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">相位噪声测量需要注意什么？</div>
+            <div class="faq-answer">
+                测量时必须使用高精度的频谱分析仪，并确保本振的相位噪声远低于被测信号的相位噪声。同时，要注意底噪平台和参考源的影响。
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5>SignalNoise</h5>
+                    <p style="font-size: 0.9rem; color: #94a3b8;">专注于射频与微波信号质量分析的专业资源平台。</p>
+                </div>
+                <div class="footer-col">
+                    <h5>资源</h5>
+                    <ul>
+                        <li><a href="#">白皮书下载</a></li>
+                        <li><a href="#">术语表</a></li>
+                        <li><a href="#">应用笔记</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>联系我们</h5>
+                    <ul>
+                        <li><a href="#">技术支持</a></li>
+                        <li><a href="#">合作咨询</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 SignalNoise Analysis. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Toggle Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close others
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
