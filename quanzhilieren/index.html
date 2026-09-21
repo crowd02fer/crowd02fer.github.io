@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全职猎人全集 - 官方正版连载与漫画阅读指南</title>
+    <meta name="description" content="本站提供《全职猎人》全集正版漫画在线阅读、动画资源下载及角色设定解析。涵盖猎人考试篇、嵌合蚁篇、友克鑫市篇等经典篇章，帮助读者与粉丝快速找到最新连载内容与观看渠道。">
+    <meta name="keywords" content="全职猎人全集, 全职猎人漫画, 猎人考试, 小杰, 奇犽, 勒巴索, 漫画在线阅读">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d4a373;
+            --secondary-color: #faedcd;
+            --accent-color: #606c38;
+            --text-dark: #2b2d42;
+            --text-light: #8d99ae;
+            --bg-body: #fdfcf8;
+            --bg-card: #ffffff;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-bottom: 2px solid var(--secondary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #c08b5c;
+            border-color: #c08b5c;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/hunterxhunter/1920/600') center/cover no-repeat;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 3rem var(--spacing-unit);
+        }
+
+        /* Section Styling */
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+        }
+
+        .section-title .more {
+            margin-left: auto;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+
+        /* Character Grid */
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .character-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .character-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .character-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background-color: var(--secondary-color);
+        }
+
+        .character-info {
+            padding: 1rem;
+        }
+
+        .character-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .character-info p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Manga Reader Section */
+        .manga-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+        }
+
+        .chapter-list {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            height: fit-content;
+        }
+
+        .chapter-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+        }
+
+        .chapter-item:last-child {
+            border-bottom: none;
+        }
+
+        .chapter-item a {
+            color: var(--text-dark);
+        }
+
+        .chapter-item a:hover {
+            color: var(--primary-color);
+        }
+
+        .chapter-item .status {
+            font-size: 0.8rem;
+            padding: 2px 6px;
+            border-radius: 3px;
+            background-color: #e9ecef;
+            color: #666;
+        }
+
+        .chapter-item .status.new {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .reader-area {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .manga-cover-large {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+            border: 4px solid var(--secondary-color);
+        }
+
+        /* Info Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 4px solid var(--accent-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .info-card h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .info-card ul {
+            padding-left: 1.2rem;
+        }
+
+        .info-card li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2b2d42;
+            color: #8d99ae;
+            padding: 3rem var(--spacing-unit);
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                margin: 1rem 0;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .manga-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">Hunter<span>Books</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#manga">全集漫画</a></li>
+                    <li><a href="#characters">角色图鉴</a></li>
+                    <li><a href="#info">猎人世界</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#manga" class="btn btn-outline">开始阅读</a>
+                <a href="#" class="btn btn-primary">加入会员</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>全职猎人全集</h1>
+            <p>探索尼特罗会长之子小杰的冒险旅程，从猎人考试到友克鑫市拍卖会，见证最强猎人的成长与羁绊。</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="#manga" class="btn btn-primary" style="padding: 0.8rem 2rem; font-size: 1.1rem;">立即阅读</a>
+                <a href="#characters" class="btn btn-outline" style="padding: 0.8rem 2rem; font-size: 1.1rem;">角色介绍</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- Character Showcase -->
+        <section id="characters">
+            <div class="section-title">
+                <h2>主要角色</h2>
+                <a href="#" class="more">查看全部 &rarr;</a>
+            </div>
+            <div class="character-grid">
+                <article class="character-card">
+                    <img src="https://picsum.photos/seed/gon/300/400" alt="小杰" class="character-img">
+                    <div class="character-info">
+                        <h3>金·富力士</h3>
+                        <p>主角，性格单纯乐观，拥有极高的直觉和耐力，目标是寻找父亲。</p>
+                    </div>
+                </article>
+                <article class="character-card">
+                    <img src="https://picsum.photos/seed/kurapika/300/400" alt="奇犽" class="character-img">
+                    <div class="character-info">
+                        <h3>奇犽·揍敌客</h3>
+                        <p>小杰的好友，来自杀手家族的天才念能力者，擅长闪电速度。</p>
+                    </div>
+                </article>
+                <article class="character-card">
+                    <img src="https://picsum.photos/seed/killua/300/400" alt="酷拉皮卡" class="character-img">
+                    <div class="character-info">
+                        <h3>酷拉皮卡</h3>
+                        <p>猎人联盟的一员，为了复国和复仇，修炼出了“红线”能力。</p>
+                    </div>
+                </article>
+                <article class="character-card">
+                    <img src="https://picsum.photos/seed/meryl/300/400" alt="雷欧力" class="character-img">
+                    <div class="character-info">
+                        <h3>雷欧力</h3>
+                        <p>拥有医学博士学位的医生，虽然嘴硬但心地善良，是可靠的伙伴。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Manga Reader Section -->
+        <section id="manga">
+            <div class="section-title">
+                <h2>全集漫画阅读</h2>
+                <a href="#" class="more">章节目录 &rarr;</a>
+            </div>
+            <div class="manga-layout">
+                <aside class="chapter-list">
+                    <h3>最新连载</h3>
+                    <div class="chapter-item">
+                        <a href="#">第390话：新的起点</a>
+                        <span class="status new">更新</span>
+                    </div>
+                    <div class="chapter-item">
+                        <a href="#">第389话：黑暗中的光芒</a>
+                        <span class="status">连载中</span>
+                    </div>
+                    <div class="chapter-item">
+                        <a href="#">第388话：最后的防线</a>
+                        <span class="status">连载中</span>
+                    </div>
+                    <div class="chapter-item">
+                        <a href="#">第387话：命运的抉择</a>
+                        <span class="status">连载中</span>
+                    </div>
+                    <div class="chapter-item">
+                        <a href="#">第386话：友克鑫市篇</a>
+                        <span class="status">连载中</span>
+                    </div>
+                    <hr style="border: 0; border-top: 1px solid #eee; margin: 1rem 0;">
+                    <h3>经典篇章</h3>
+                    <div class="chapter-item">
+                        <a href="#">猎人考试篇</a>
+                        <span class="status">完结</span>
+                    </div>
+                    <div class="chapter-item">
+                        <a href="#">友克鑫市篇</a>
+                        <span class="status">完结</span>
+                    </div>
+                    <div class="chapter-item">
+                        <a href="#">嵌合蚁篇</a>
+                        <span class="status">完结</span>
+                    </div>
+                    <div class="chapter-item">
+                        <a href="#">贪婪之岛篇</a>
+                        <span class="status">完结</span>
+                    </div>
+                </aside>
+                <div class="reader-area">
+                    <img src="https://picsum.photos/seed/manga_cover/400/550" alt="漫画封面" class="manga-cover-large">
+                    <h2 style="margin-bottom: 0.5rem; color: var(--accent-color);">第390话：新的起点</h2>
+                    <p style="color: var(--text-light); margin-bottom: 1.5rem;">猎人世界的故事还在继续，命运的齿轮正在转动。</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <button class="btn btn-primary" onclick="alert('阅读功能仅供演示，请前往正版渠道阅读。')">上一话</button>
+                        <button class="btn btn-primary" onclick="alert('阅读功能仅供演示，请前往正版渠道阅读。')">下一话</button>
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.8rem; color: #999;">*本站资源仅供学习交流，请支持原作。*</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info Section -->
+        <section id="info">
+            <div class="section-title">
+                <h2>猎人世界设定</h2>
+            </div>
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>什么是念能力？</h3>
+                    <p>念能力是猎人世界中人类潜能觉醒后产生的一种能量形式。掌握念的人被称为“念能力者”，他们可以产生肉眼看不见的“气”。</p>
+                    <ul>
+                        <li><strong>强化系：</strong> 攻击力最强，如小杰、雷欧力。</li>
+                        <li><strong>变化系：</strong> 变化气的性质，如酷拉皮卡、西索。</li>
+                        <li><strong>具现化系：</strong> 将气实体化，如库洛洛。</li>
+                        <li><strong>操作系：</strong> 控制他人或物体，如信长。</li>
+                    </ul>
+                </article>
+                <article class="info-card">
+                    <h3>猎人执照考试</h3>
+                    <p>猎人执照考试是进入猎人世界的通行证。每年举办一次，通过率极低，通常只有千分之一的成功率。</p>
+                    <ul>
+                        <li><strong>资格：</strong> 年满12岁（后改为16岁）。</li>
+                        <li><strong>试炼：</strong> 包括体能、智力、心理及特殊能力的考验。</li>
+                        <li><strong>目的：</strong> 获得探索未知世界的权利、巨额财富及特殊权限。</li>
+                    </ul>
+                </article>
+                <article class="info-card">
+                    <h3>经典篇章回顾</h3>
+                    <p>《全职猎人》以其精妙的剧情和设定著称，各个篇章都有独特的魅力。</p>
+                    <ul>
+                        <li><strong>猎人考试篇：</strong> 介绍世界观与主角团集结。</li>
+                        <li><strong>友克鑫市篇：</strong> 拍卖会上的暗流涌动，幻影旅团登场。</li>
+                        <li><strong>嵌合蚁篇：</strong> 战力体系的质变，蚁王梅路艾姆的诞生。</li>
+                        <li><strong>贪婪之岛篇：</strong> VR游戏攻略与系统BUG的运用。</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>HunterBooks</h4>
+                <p>致力于提供最优质的《全职猎人》漫画阅读体验与资讯服务。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#manga">全集漫画</a></li>
+                    <li><a href="#characters">角色图鉴</a></li>
+                    <li><a href="#info">猎人知识</a></li>
+                    <li><a href="#">版权声明</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>友情链接</h4>
+                <ul>
+                    <li><a href="#">WJ官方</a></li>
+                    <li><a href="#">年度漫画榜</a></li>
+                    <li><a href="#">动画频道</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 HunterBooks. 本站资源来自网络，仅供学习交流使用，版权归原作者所有。</p>
+        </div>
+    </footer>
+
+</body>
+  </html>
