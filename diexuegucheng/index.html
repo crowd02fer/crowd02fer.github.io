@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>喋血孤城票房 - 影视资讯与票房数据深度解析</title>
+    <meta name="description" content="提供喋血孤城电影票房详细数据、上映时间、评分统计及市场表现分析。了解该片历史票房成就、排片情况及观众口碑评价。">
+    <meta name="keywords" content="喋血孤城票房, 喋血孤城电影, 喋血孤城票房数据, 喋血孤城评分, 喋血孤城票房统计">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8b0000; /* 深红色，契合战争/血色主题 */
+            --secondary-color: #1a1a1a;
+            --accent-color: #c0392b;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #f8f9fa;
+            --bg-card: #ffffff;
+            --border-radius: 8px;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/war/1600/600') center/cover no-repeat;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* 核心数据板块 */
+        .stats-section {
+            padding: 60px 0;
+            background-color: var(--bg-card);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            color: var(--text-light);
+            font-size: 16px;
+        }
+
+        /* 主要内容布局 */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            padding: 60px 0;
+        }
+
+        /* 左侧文章/详情区 */
+        .article-section h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            position: relative;
+        }
+
+        .article-section h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 60px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background-color: #fff0f0;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* 票房走势图模拟 */
+        .chart-container {
+            margin: 30px 0;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+        }
+
+        .chart-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .chart-bars {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 200px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .bar-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 12%;
+        }
+
+        .bar {
+            width: 100%;
+            background-color: var(--accent-color);
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            transition: height 0.5s ease;
+        }
+
+        .bar:hover {
+            opacity: 0.8;
+        }
+
+        .bar-label {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 8px;
+        }
+
+        .bar-value {
+            position: absolute;
+            top: -25px;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        /* 右侧侧边栏 */
+        aside .widget {
+            background-color: var(--bg-card);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 30px;
+        }
+
+        .widget-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        .movie-info-list li {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 8px;
+        }
+
+        .movie-info-list span:first-child {
+            color: var(--text-light);
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background-color: #f0f0f0;
+            color: var(--text-main);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 14px;
+        }
+
+        .tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--secondary-color);
+            color: #aaa;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 14px;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .nav-links {
+                display: none; /* 移动端简化：实际项目可做汉堡菜单 */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">票房观察室</div>
+            <nav class="nav-links">
+                <a href="#">首页</a>
+                <a href="#">电影票房</a>
+                <a href="#">电视剧排行</a>
+                <a href="#">影人资料</a>
+                <a href="#">行业分析</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 首屏 Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>喋血孤城票房</h1>
+            <p>全面解析抗战题材电影《喋血孤城》的票房表现、市场反响及历史地位。了解这部以常德会战为背景的史诗巨制如何打动观众。</p>
+            <a href="#details" class="btn">查看详细数据</a>
+        </div>
+    </section>
+
+    <!-- 核心数据概览 -->
+    <section class="stats-section" id="details">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>1.25亿</h3>
+                    <p>总票房 (人民币)</p>
+                </div>
+                <div class="stat-item">
+                    <h3>2009</h3>
+                    <p>上映年份</p>
+                </div>
+                <div class="stat-item">
+                    <h3>8.4</h3>
+                    <p>豆瓣评分 (参考)</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4500万+</h3>
+                    <p>制作成本</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主体内容 -->
+    <div class="container main-content">
+        
+        <!-- 左侧：深度解析 -->
+        <main class="article-section">
+            <h2>影片概况与票房表现分析</h2>
+            <article class="article-content">
+                <p>《喋血孤城》是一部于2009年上映的中国大陆战争电影，由冯小宁执导，吕良伟、袁立等主演。影片以1943年的常德会战为背景，讲述了国民革命军第74军57师8177名官兵，在师长余程万率领下，孤城血战，与日军血拼16昼夜的悲壮历史。</p>
+                
+                <div class="highlight-box">
+                    <strong>票房背景：</strong>
+                    该片在国庆档期上映，凭借其硬核的战争场面和对民族精神的刻画，在竞争激烈的档期中获得了一定的关注度。
+                </div>
+
+                <h3>票房数据解读</h3>
+                <p>根据历史票房统计，电影《喋血孤城》最终累计票房约为 <strong>1.25亿元人民币</strong>。这一成绩在当年的国产战争片中属于中等偏上水平，但考虑到其高昂的制作成本和特定的题材受众，其商业回报率相对保守。</p>
+                
+                <p>从市场表现来看，该片在首映周末取得了不错的上座率，尤其是在北方地区和男性观众群体中反响热烈。然而，随着口碑的逐渐发酵，影片在后半程的排片量有所下滑，这反映了当时观众对于战争题材影片审美疲劳以及同档期其他商业大片分流的影响。</p>
+
+                <h3>口碑与评价</h3>
+                <p>虽然票房数字并非其最耀眼的标签，但《喋血孤城》在专业影评人和历史爱好者中获得了极高的评价。影片并未过度渲染个人英雄主义，而是着重于展现军队的集体意志和“守土有责”的家国情怀。这种风格使其在随后的岁月里，逐渐成为许多军事迷和影迷心中的经典之作。</p>
+
+                <h3>常德会战的历史意义</h3>
+                <p>理解《喋血孤城》的票房，不能脱离其背后的历史背景。常德会战是抗日战争中最为惨烈的战役之一，被称为“东方的斯大林格勒”。影片的票房贡献者，很大程度上是那些对这段历史有着深刻认知和情感共鸣的观众。他们的观影行为，是对历史的一种致敬和铭记。</p>
+            </article>
+
+            <!-- 模拟票房走势图 -->
+            <div class="chart-container">
+                <div class="chart-title">上映初期票房走势 (估算)</div>
+                <div class="chart-bars">
+                    <div class="bar-group">
+                        <div class="bar" style="height: 40%;">
+                            <span class="bar-value">4000万</span>
+                        </div>
+                        <span class="bar-label">首周</span>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height: 70%;">
+                            <span class="bar-value">7000万</span>
+                        </div>
+                        <span class="bar-label">次周</span>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height: 85%;">
+                            <span class="bar-value">8500万</span>
+                        </div>
+                        <span class="bar-label">三周</span>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height: 100%;">
+                            <span class="bar-value">1.25亿</span>
+                        </div>
+                        <span class="bar-label">收官</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 右侧：侧边栏 -->
+        <aside>
+            <div class="widget">
+                <h3 class="widget-title">影片基本信息</h3>
+                <ul class="movie-info-list">
+                    <li><span>导演</span> <strong>冯小宁</strong></li>
+                    <li><span>主演</span> <strong>吕良伟, 袁立, 沈傲君</strong></li>
+                    <li><span>类型</span> <strong>战争, 历史</strong></li>
+                    <li><span>时长</span> <strong>110分钟</strong></li>
+                    <li><span>上映日期</span> <strong>2009-10-01</strong></li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3 class="widget-title">相关标签</h3>
+                <div class="tag-cloud">
+                    <a href="#" class="tag">常德会战</a>
+                    <a href="#" class="tag">抗战电影</a>
+                    <a href="#" class="tag">冯小宁</a>
+                    <a href="#" class="tag">第74军</a>
+                    <a href="#" class="tag">孤城血战</a>
+                    <a href="#" class="tag">军事历史</a>
+                    <a href="#" class="tag">战争片推荐</a>
+                </div>
+            </div>
+
+            <div class="widget">
+                <h3 class="widget-title">热门文章</h3>
+                <ul class="movie-info-list">
+                    <li><a href="#">《集结号》票房与《喋血孤城》的对比分析</a></li>
+                    <li><a href="#">抗战题材电影如何重塑历史记忆？</a></li>
+                    <li><a href="#">吕良伟：为了演好余程万，我体验了三个月军旅生活</a></li>
+                    <li><a href="#">常德保卫战：被遗忘的英雄史诗</a></li>
+                </ul>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于本站</h4>
+                    <p>专注提供电影票房数据查询、影视作品分析与行业资讯。致力于为影迷和从业者提供准确、客观的数据支持。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">票房总榜</a></li>
+                        <li><a href="#">新片预告</a></li>
+                        <li><a href="#">经典回顾</a></li>
+                        <li><a href="#">影人百科</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系合作</h4>
+                    <ul>
+                        <li><a href="#">商务合作</a></li>
+                        <li><a href="#">数据投稿</a></li>
+                        <li><a href="#">网站地图</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 票房观察室. All Rights Reserved. 本站数据仅供参考，以官方统计为准。
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
