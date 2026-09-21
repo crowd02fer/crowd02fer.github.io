@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="韩世忠（1089年－1151年），字良臣，延安路人，南宋名将，抗金英雄。本站收录韩世忠生平简介、主要战役、家庭背景及历史评价，提供详尽的历史资料与文献研究。">
+    <meta name="keywords" content="韩世忠,南宋名将,抗金英雄,韩世忠生平,韩世忠战役,岳飞,黄天荡">
+    <title>韩世忠-南宋名将抗金英雄生平与历史资料馆</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B4513; /* 鞍褐色，象征历史与铁血 */
+            --secondary-color: #D2691E; /* 巧克力色 */
+            --accent-color: #CD853F; /* 秘鲁色 */
+            --bg-color: #FDFBF7; /* 米白色，仿宣纸质感 */
+            --text-color: #333333;
+            --text-light: #666666;
+            --border-color: #E0D8D0;
+            --white: #FFFFFF;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "SimSun", serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 布局容器 */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            border: 2px solid var(--primary-color);
+            padding: 0 5px;
+            margin-right: 8px;
+            font-family: "KaiTi", serif;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-color);
+            font-weight: 500;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/hanshi/1920/600') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-family: "KaiTi", serif;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border-radius: 4px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* 主体内容 */
+        main {
+            padding: 60px 0;
+        }
+
+        /* 概览网格 */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .profile-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .profile-info h3 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            color: var(--primary-color);
+        }
+
+        .profile-info .title {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .profile-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        .stat-item h4 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* 时间轴样式 */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-family: "KaiTi", serif;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: var(--border-color);
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+            width: 50%;
+            padding: 0 40px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background-color: var(--white);
+            border: 3px solid var(--secondary-color);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -8px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -8px;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .timeline-year {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        /* 战役列表 */
+        .battles-section {
+            background-color: var(--white);
+            padding: 60px 0;
+            margin-top: 60px;
+        }
+
+        .battles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .battle-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: #fff;
+        }
+
+        .battle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .battle-header {
+            background-color: var(--bg-color);
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .battle-year {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .battle-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .battle-body {
+            padding: 20px;
+        }
+
+        .battle-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .battle-tags span {
+            display: inline-block;
+            font-size: 0.8rem;
+            padding: 4px 8px;
+            background-color: #f0f0f0;
+            color: #555;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+
+        /* 历史评价 */
+        .evaluation-section {
+            background-color: #f4f1ea;
+            padding: 60px 0;
+        }
+
+        .quote-box {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            font-family: "KaiTi", serif;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .quote-author {
+            color: var(--text-light);
+            font-weight: bold;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 40px 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 10px;
+                text-align: left !important;
+            }
+
+            .timeline-item:nth-child(odd), .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-dot, .timeline-item:nth-child(even) .timeline-dot {
+                left: 12px;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo"><span>韩世忠</span>历史资料馆</a>
+        <nav>
+            <ul>
+                <li><a href="#overview" class="active">生平简介</a></li>
+                <li><a href="#timeline">历史年表</a></li>
+                <li><a href="#battles">著名战役</a></li>
+                <li><a href="#evaluation">历史评价</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>铁血丹心 抗金名将</h1>
+        <p>韩世忠（1089年－1151年），字良臣，延安路人。南宋杰出的军事家、民族英雄，与岳飞、张俊、刘光世并称“中兴四将”。</p>
+        <a href="#overview" class="btn">了解生平</a>
+    </div>
+</section>
+
+<main class="container">
+    <!-- 概览部分 -->
+    <section id="overview" class="overview-grid">
+        <article class="profile-card">
+            <img src="https://picsum.photos/seed/hanshi/400/500" alt="韩世忠画像" class="profile-img">
+            <div class="profile-info">
+                <h3>韩世忠</h3>
+                <span class="title">南宋名将 / 民族英雄</span>
+                <p style="margin-top: 15px; text-align: left; font-size: 0.95rem;">
+                    韩世忠出身贫寒，自幼习武，性格豪爽，有勇有谋。在北宋末年从军，因战功卓著逐渐崛起。南宋建立后，他坚决主战，在平定内乱和抵抗金军入侵中发挥了重要作用。晚年因不满秦桧弄权，自请解职，隐居杭州西湖。
+                </p>
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <h4>1089</h4>
+                        <p>出生年份</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>1151</h4>
+                        <p>逝世年份</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="profile-details">
+            <h2>主要贡献与历史地位</h2>
+            <p style="margin-top: 15px;">
+                韩世忠一生戎马，战功赫赫。他在平定苗刘兵变中力挽狂澜，护驾赵构登基，立下大功。在抗金战场上，他最为人称道的是指挥了著名的<strong>黄天荡之战</strong>，以八千兵力阻击金军十万大军，使其不敢渡江，极大地鼓舞了南宋军民的抗金士气。
+            </p>
+            <p style="margin-top: 15px;">
+                韩世忠为人刚直不阿，不阿谀奉承。在岳飞被害后，他曾在朝堂上据理力争，试图保岳飞性命，虽未成功，但展现了他高尚的道德情操。他也是一位出色的军事将领，擅长治军，所部纪律严明，战斗力强。
+            </p>
+            <div style="margin-top: 30px; background-color: #fff; padding: 20px; border-left: 4px solid var(--secondary-color); box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                <h3 style="color: var(--primary-color); margin-bottom: 10px;">家族背景</h3>
+                <p>韩世忠的妻子是著名的梁红玉，她击鼓退金兵的故事家喻户晓。两人伉俪情深，共同抵御外侮，成为历史上的佳话。韩世忠与岳飞、张俊、刘光世并称为“中兴四将”。</p>
+            </div>
+        </article>
+    </section>
+
+    <!-- 时间轴 -->
+    <section id="timeline" class="section-title">
+        <h2>生平年表</h2>
+        <p>回顾韩世忠波澜壮阔的一生</p>
+    </section>
+    
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="timeline-year">1089年</div>
+                <h3>出生</h3>
+                <p>出生于延安路人（今陕西绥德）一户农家，自幼习武。</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="timeline-year">1114年</div>
+                <h3>从军</h3>
+                <p>应募入伍，投身军旅，因作战勇猛被提拔为偏将。</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="timeline-year">1127年</div>
+                <h3>靖康之变</h3>
+                <p>金兵攻破汴京，北宋灭亡。韩世忠随宋高宗赵构南渡。</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="timeline-year">1129年</div>
+                <h3>平定苗刘兵变</h3>
+                <p>苗傅、刘正彦发动兵变，逼宫赵构。韩世忠率军勤王，平定叛乱，恢复皇位。</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="timeline-year">1130年</div>
+                <h3>黄天荡大捷</h3>
+                <p>韩世忠率军与金兀术在长江激战四十八日，重创金军，金军因此不敢渡江。</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="timeline-year">1142年</div>
+                <h3>风波亭之变</h3>
+                <p>岳飞被秦桧以“莫须有”罪名杀害。韩世忠当面质问秦桧“莫须有三字何以服天下？”</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <div class="timeline-year">1151年</div>
+                <h3>逝世</h3>
+                <p>韩世忠在临安（今杭州）病逝，享年六十三岁，谥号“忠武”。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 战役部分 -->
+    <section id="battles" class="battles-section">
+        <div class="section-title">
+            <h2>著名战役</h2>
+            <p>展现韩世忠卓越的军事指挥才能</p>
+        </div>
+        
+        <div class="battles-grid">
+            <article class="battle-card">
+                <div class="battle-header">
+                    <span class="battle-year">1130年</span>
+                    <h3 class="battle-title">黄天荡之战</h3>
+                </div>
+                <div class="battle-body">
+                    <p class="battle-desc">金军统帅完颜宗弼（金兀术）率军南下，意图渡江。韩世忠率八千水军驻守镇江，利用地形优势封锁长江。双方在黄天荡激战四十八天，韩世忠妻梁红玉亲自击鼓助威。此战虽未全歼金军，但重创其有生力量，使其不敢再轻易渡江。</p>
+                    <div class="battle-tags">
+                        <span>水战</span>
+                        <span>阻击战</span>
+                        <span>八千对十万</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="battle-card">
+                <div class="battle-header">
+                    <span class="battle-year">1129年</span>
+                    <h3 class="battle-title">平定苗刘兵变</h3>
+                </div>
+                <div class="battle-body">
+                    <p class="battle-desc">金军南下，宋高宗赵构惊慌南逃。殿前都指挥使苗傅和威州刺史刘正彦趁机发动兵变，逼赵构退位。韩世忠闻讯后，从镇江火速回京，联合张俊、刘光世等部平定叛乱，恢复赵构皇位，稳定了南宋初期的混乱局势。</p>
+                    <div class="battle-tags">
+                        <span>勤王</span>
+                        <span>政变平定</span>
+                        <span>护驾</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="battle-card">
+                <div class="battle-header">
+                    <span class="battle-year">1134年</span>
+                    <h3 class="battle-title">收复襄阳六郡</h3>
+                </div>
+                <div class="battle-body">
+                    <p class="battle-desc">韩世忠奉命与张俊、岳飞协同作战，收复被伪齐（金国傀儡政权）占领的襄阳六郡。此战切断了金军与伪齐的联系，打通了南宋通往中原的战略通道，为后来北伐奠定了重要基础。</p>
+                    <div class="battle-tags">
+                        <span>收复失地</span>
+                        <span>北伐</span>
+                        <span>协同作战</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 评价部分 -->
+    <section id="evaluation" class="evaluation-section">
+        <div class="quote-box">
+            <p class="quote-text">“韩世忠忠勇双全，为中兴名将。虽力主抗金，然在朝廷权臣掣肘之下，亦难展宏图，其人格之高洁，令人敬仰。”</p>
+            <p class="quote-author">—— 历史学者评述</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于韩世忠</h4>
+                <p>本站致力于整理和传播南宋名将韩世忠的历史资料，弘扬爱国主义精神，为历史爱好者提供学术参考。</p>
+            </div>
+            <div class="footer-col">
+                <h4>相关链接</h4>
+                <ul>
+                    <li><a href="#">南宋历史</a></li>
+                    <li><a href="#">岳飞</a></li>
+                    <li><a href="#">秦桧</a></li>
+                    <li><a href="#">黄天荡</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系方式</h4>
+                <ul>
+                    <li>历史研究小组</li>
+                    <li>邮箱: contact@hanshi-history.com</li>
+                    <li>地址: 中国杭州</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 韩世忠历史资料馆 版权所有
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
