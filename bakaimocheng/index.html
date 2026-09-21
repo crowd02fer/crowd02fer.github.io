@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>未成年隐私保护-未成年人网络保护与自我安全指南</title>
+    <meta name="description" content="本页面旨在普及网络安全知识，重点讲解如何识别和防范针对未成年人的网络诈骗与隐私泄露风险，提供合法合规的网络环境维护建议。">
+    <meta name="keywords" content="未成年隐私保护, 网络安全, 青少年网络安全, 隐私泄露防范, 网络安全教育">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 var(--spacing);
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        /* Articles Section */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s;
+        }
+
+        .article-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .article-body {
+            padding: 25px;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .article-title {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--primary-color);
+        }
+
+        .article-excerpt {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .sidebar-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .alert-list {
+            list-style: none;
+        }
+
+        .alert-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.95rem;
+        }
+
+        .alert-list li:last-child {
+            border-bottom: none;
+        }
+
+        .alert-list strong {
+            display: block;
+            color: var(--accent-color);
+            margin-bottom: 4px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            margin-top: 40px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            padding-left: 10px;
+            border-left: 3px solid #ddd;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none; /* Simplify for mobile */
+            }
+
+            .header-container {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                网络安全卫士
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">安全知识</a></li>
+                    <li><a href="#">防骗指南</a></li>
+                    <li><a href="#">隐私保护</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>守护青少年网络安全</h1>
+        <p>面对复杂的网络环境，了解如何保护未成年人的隐私与安全至关重要。我们提供专业的指导与建议，帮助家长和青少年共同构建健康的网络空间。</p>
+        <a href="#resources" class="cta-button">获取安全资源</a>
+    </section>
+
+    <main>
+        <section class="content-area">
+            <h2 class="section-title">最新安全资讯</h2>
+            
+            <article class="article-card">
+                <div class="article-body">
+                    <div class="article-meta">2023-10-24 · 网络安全 · 阅读量 1.2k</div>
+                    <h3 class="article-title">警惕网络诱导与隐私侵犯行为</h3>
+                    <p class="article-excerpt">网络空间并非法外之地。针对未成年人的诱导性内容、隐私窥探及图片滥用行为，不仅违反道德，更触犯法律。了解相关法律法规，是保护自己的第一步。</p>
+                    <a href="#" class="read-more">阅读全文 &rarr;</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="article-body">
+                    <div class="article-meta">2023-10-22 · 家长指南 · 阅读量 3.5k</div>
+                    <h3 class="article-title">家长如何引导孩子正确使用网络</h3>
+                    <p class="article-excerpt">与其单纯禁止，不如正确引导。通过建立家庭网络使用规则、开启屏幕时间管理功能以及保持开放沟通，可以有效降低青少年接触不良信息的风险。</p>
+                    <a href="#" class="read-more">阅读全文 &rarr;</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="article-body">
+                    <div class="article-meta">2023-10-20 · 法律科普 · 阅读量 2.1k</div>
+                    <h3 class="article-title">未成年人肖像权与隐私权的法律界定</h3>
+                    <p class="article-excerpt">根据相关法律法规，任何组织或者个人不得以丑化、污损，或者利用信息技术手段伪造等方式侵害他人的肖像权。未经同意，不得制作、使用、公开未成年人的肖像。</p>
+                    <a href="#" class="read-more">阅读全文 &rarr;</a>
+                </div>
+            </article>
+        </section>
+
+        <aside>
+            <div class="sidebar-card">
+                <h3>⚠️ 常见风险提示</h3>
+                <ul class="alert-list">
+                    <li>
+                        <strong>隐私泄露风险</strong>
+                        不要在网络上随意上传个人照片或视频，尤其是带有明显特征（如校服、特定地标）的照片。
+                    </li>
+                    <li>
+                        <strong>网络诈骗</strong>
+                        警惕陌生人的私信请求，不轻易点击不明链接，不向陌生人转账。
+                    </li>
+                    <li>
+                        <strong>网络欺凌</strong>
+                        遇到言语攻击或恶意P图行为，应立即截图保存证据并向平台举报。
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card" id="resources">
+                <h3>🛡️ 安全工具推荐</h3>
+                <ul class="alert-list">
+                    <li><strong>青少年模式</strong>：各大平台均提供，可过滤不适宜内容。</li>
+                    <li><strong>防火墙软件</strong>：安装正规杀毒软件，拦截恶意网页。</li>
+                    <li><strong>家长控制APP</strong>：实时监控设备使用情况，设置使用时长。</li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <section class="faq-section">
+        <h2 class="section-title">常见问题解答</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">如果我的照片被恶意P图并传播，该怎么办？</div>
+            <div class="faq-answer">首先，立即向发布平台举报并要求删除。同时，收集证据（截图、链接等），并可以咨询律师或向公安机关报案，维护自身合法权益。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">未成年人可以发布自己的照片吗？</div>
+            <div class="faq-answer">可以，但需要非常谨慎。建议仅在经过家长同意、且不暴露具体身份信息（如学校、家庭住址）的前提下发布，并开启隐私设置。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">如何判断一个网站是否安全？</div>
+            <div class="faq-answer">查看网站是否以“https”开头，是否有正规的备案信息，以及是否有用户评价。对于要求提供过多个人隐私的网站，应保持高度警惕。</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>网络安全卫士致力于为用户提供安全、健康的网络环境建议。</p>
+            <div class="footer-links">
+                <a href="#">隐私政策</a>
+                <a href="#">服务条款</a>
+                <a href="#">联系我们</a>
+                <a href="#">举报中心</a>
+            </div>
+            <p style="font-size: 0.8rem; color: #7f8c8d; margin-top: 20px;">
+                © 2023 网络安全卫士. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
